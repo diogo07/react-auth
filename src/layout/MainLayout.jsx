@@ -25,6 +25,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { withRouter } from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -102,6 +104,12 @@ function MainLayout(props) {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+
+  useEffect(() => {
+    if(!props.user){
+      props.history.push('/');
+    }
+  }, []);
 
   return (
     <div>
@@ -183,4 +191,4 @@ function MainLayout(props) {
 
 const mapStateToProps = state => ({ user: state.auth.user, loading: state.loading });
 const mapDispatchToProps = dispatch => bindActionCreators({ logout }, dispatch);
-export default connect(mapStateToProps, mapDispatchToProps)((withWidth()(MainLayout)));
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(withWidth()(MainLayout)));
