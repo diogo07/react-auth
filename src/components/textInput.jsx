@@ -7,18 +7,12 @@ const styles = makeStyles({
     '& label.Mui-focused': {
       color: 'white',
     },
-    '& .MuiInput-underline:after': {
-      borderBottomColor: 'yellow',
-    },
     '& .MuiOutlinedInput-root': {
       '& fieldset': {
         borderColor: 'white',
       },
       '&:hover fieldset': {
         borderColor: 'white',
-      },
-      '&.Mui-focused fieldset': {
-        borderColor: 'yellow',
       },
     },
   },

@@ -8,12 +8,16 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
 import TextInput from '../../components/textInput';
-import { makeStyles } from "@material-ui/core/styles";
+import PasswordInput from '../../components/passwordInput';
 
+const INITIAL_STATE = {
+    showPassword: false
+}
 
 class LoginPage extends Component {
     constructor(props) {
-        super(props)
+        super(props);
+        this.state = INITIAL_STATE;
     }
 
     componentDidMount() {
@@ -49,11 +53,12 @@ class LoginPage extends Component {
                                 />
 
                             <Field
-                                component={TextInput}
-                                type="password" 
+                                component={PasswordInput}
                                 name="senha"
                                 label="Senha"
-                                variant="outlined" />
+                                variant="outlined" 
+                                
+                            />
                             
                             <Button variant="contained" size="large" type="submit" fullWidth={true} >
                                 ENTRAR

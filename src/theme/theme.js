@@ -1,6 +1,9 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 
 const theme = createMuiTheme({
+  typography:{
+    fontFamily: "'Poppins', sans-serif"
+  },
   palette: {
     primary: {
       main: '#2db183',
